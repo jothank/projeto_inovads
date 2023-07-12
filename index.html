@@ -192,15 +192,6 @@
 
       <h1>Hora Técnica</h1>
 
-      <label for="horaTecnicaColaborador"
-        >Hora Técnica por Colaborador:
-        <input
-          type="text"
-          id="horaTecnicaColaborador"
-          name="horaTecnicaColaborador"
-          disabled
-      /></label>
-
       <label for="quantidadeColaborador"
         >Quantidade Colaboradores:
         <input
@@ -210,12 +201,50 @@
           oninput="horaTecnica()"
       /></label>
 
+      <label for="horaTecnicaColaborador"
+        >Hora Técnica por Colaborador:
+        <input
+          type="text"
+          id="horaTecnicaColaborador"
+          name="horaTecnicaColaborador"
+          disabled
+      /></label>
+
       <label for="horaTecnicaEmpresa"
         >Hora Técnica da Empresa:
         <input
           type="text"
           id="horaTecnicaEmpresa"
           name="horaTecnicaEmpresa"
+          disabled
+      /></label>
+
+      <h1>Calcular Preço Sugerido</h1>
+
+      <label for="valorHoraTecnica"
+        >Valor Hora Técnica:
+        <input
+          type="text"
+          id="valorHoraTecnica"
+          name="valorHoraTecnica"
+          disabled
+      /></label>
+
+      <label for="quantidadeHoras"
+        >Quantidade de Horas:
+        <input
+          type="text"
+          id="quantidadeHoras"
+          name="quantidadeHoras"
+          oninput="calcularPrecoSugerido()"
+      /></label>
+
+      <label for="valorTotalHoraTecnica"
+        >Valor Total Hora Técnica:
+        <input
+          type="text"
+          id="valorTotalHoraTecnica"
+          name="valorTotalHoraTecnica"
           disabled
       /></label>
     </form>

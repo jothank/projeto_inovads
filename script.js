@@ -130,7 +130,8 @@ function horaTecnica() {
   var calcularHoraTecnicaEmpresa = parseFloat(horaTecnicaEmpresa.value);
 
   var totalHoraTecnicaColaborador =
-    calcularHoraTecnicaColaborador + calcularHoraTecnicaEmpresa / 2;
+    calcularHoraTecnicaColaborador +
+    calcularHoraTecnicaEmpresa / quantidadeColaborador;
 
   var totalHoraTecnicaEmpresa =
     calcularHoraTecnicaColaborador * quantidadeColaborador +
@@ -149,5 +150,28 @@ function horaTecnica() {
   document.getElementById("horaTecnicaEmpresa").value =
     totalHoraTecnicaEmpresa.toFixed(2);
   document.getElementById("quantidadeColaborador").value =
-    gastoFixoH.toFixed(0);
+    quantidadeColaborador.toFixed(0);
+}
+
+function calcularPrecoSugerido() {
+  var valorHoraTecnica = document.getElementById("horaTecnicaEmpresa");
+
+  var quantidadeHoras = parseFloat(
+    document.getElementById("quantidadeHoras").value
+  );
+
+  var valorHoraTecnicaValue = parseFloat(valorHoraTecnica.value);
+
+  var valorTotalHoraTecnica = valorHoraTecnicaValue * quantidadeHoras;
+
+  valorHoraTecnica = isNaN(valorHoraTecnica) ? 0 : valorHoraTecnica;
+  quantidadeHoras = isNaN(quantidadeHoras) ? 0 : quantidadeHoras;
+  valorTotalHoraTecnica = isNaN(valorTotalHoraTecnica)
+    ? 0
+    : valorTotalHoraTecnica;
+
+  document.getElementById("valorHoraTecnica").value =
+    valorHoraTecnicaValue.toFixed(2);
+  document.getElementById("valorTotalHoraTecnica").value =
+    valorTotalHoraTecnica.toFixed(2);
 }
