@@ -119,3 +119,20 @@ function jornadaTrabalhadoGastosFixos() {
 
   document.getElementById("gastoFixoH").value = gastoFixoH.toFixed(2);
 }
+
+function horaTecnica() {
+  var despesasGastoFixo = document.getElementById("totalDespesas"); // Obter o elemento corretamente
+
+  var jornadaTrabalhadoGastos = parseFloat(
+    document.getElementById("jornadaTrabalhadoGastos").value
+  );
+
+  var totalDespesasGastoFixo = parseFloat(despesasGastoFixo.value); // Acessar a propriedade 'value' corretamente
+
+  var gastoFixoH = totalDespesasGastoFixo / jornadaTrabalhadoGastos;
+
+  jornadaTrabalhadoGastos = isNaN(jornadaTrabalhadoGastos) ? 0 : jornadaTrabalhadoGastos;
+  gastoFixoH = isNaN(gastoFixoH) ? 0 : gastoFixoH;
+
+  document.getElementById("gastoFixoH").value = gastoFixoH.toFixed(2);
+}
