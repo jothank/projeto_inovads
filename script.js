@@ -219,3 +219,4 @@ function calcularPrecoSugerido() {
   document.getElementById("porcentagemLucro").value =
     totalPorcentagemLucro + '%';
 }
+
