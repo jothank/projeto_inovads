@@ -159,7 +159,9 @@ function calcularPrecoSugerido() {
   var deslocamento = document.getElementById("deslocamento");
   var alimentacao = document.getElementById("alimentacao");
   var boleto = document.getElementById("boleto");
-
+  var comissao = document.getElementById("comissao");
+  var taxaCartao = document.getElementById("taxaCartao");
+  var imposto = document.getElementById("imposto");
   var porcentagemLucro = document.getElementById("porcentagemLucro");
   var lucro = document.getElementById("lucro");
 
@@ -194,10 +196,6 @@ function calcularPrecoSugerido() {
       boleto) /
     (1 - (0.01 + 0.025 + 0.05 + 0.2));
 
-  var comissao = totalprecoSugerido * 0.01;
-  var taxaCartao = totalprecoSugerido * 0.025;
-  var imposto = totalprecoSugerido * 0.05;
-
   totalLucro =
     totalprecoSugerido -
     valorTotalHoraTecnica -
@@ -209,18 +207,16 @@ function calcularPrecoSugerido() {
     taxaCartao -
     imposto;
 
-  totalPorcentagemLucro = (totalLucro / totalprecoSugerido) * 100;
+  totalPorcentagemLucro = totalLucro / totalprecoSugerido;
 
   document.getElementById("valorHoraTecnica").value =
     valorHoraTecnicaValue.toFixed(2);
-  document.getElementById("comissao").value = comissao.toFixed(2);
-  document.getElementById("taxaCartao").value = taxaCartao.toFixed(2);
-  document.getElementById("imposto").value = imposto.toFixed(2);
   document.getElementById("valorTotalHoraTecnica").value =
     valorTotalHoraTecnica.toFixed(2);
   document.getElementById("precoSugerido").value =
     totalprecoSugerido.toFixed(2);
   document.getElementById("lucro").value = totalLucro.toFixed(2);
   document.getElementById("porcentagemLucro").value =
-    totalPorcentagemLucro + "%";
+    totalPorcentagemLucro + '%';
 }
+
