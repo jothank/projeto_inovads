@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora de Despesas</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Despesas</h1>
+
+    <form id="despesaForm">
+      <label for="salario"
+        >Salário Administrativo:
+        <input
+          type="number"
+          step="0.01"
+          name="quantity"
+          min="0.01"
+          id="salario"
+          name="salario"
+          oninput="calcularEncargos(); calcularDespesas()"
+      /></label>
+
+      <label for="encargos"
+        >Encargos / Benefícios:
+        <input type="number" id="encargos" name="encargos" readonly
+      /></label>
+
+      <label for="aluguel"
+        >Aluguel:
+        <input
+          type="number"
+          step="0.01"
+          name="quantity"
+          min="0.01"
+          id="aluguel"
+          name="aluguel"
+          oninput="calcularDespesas()"
+      /></label>
+
+      <label for="agua"
+        >Água:
+        <input type="number" id="agua" name="agua" oninput="calcularDespesas()"
+      /></label>
+
+      <label for="energia"
+        >Energia:
+        <input
+          type="number"
+          id="energia"
+          name="energia"
+          oninput="calcularDespesas()"
+      /></label>
+
+      <label for="telefonia"
+        >Telefonia / Comunicações Adm:
+        <input
+          type="number"
+          id="telefonia"
+          name="telefonia"
+          oninput="calcularDespesas()"
+      /></label>
+
+      <label for="internet"
+        >Internet:
+        <input
+          type="number"
+          id="internet"
+          name="internet"
+          oninput="calcularDespesas()"
+      /></label>
+
+      <label for="iptu"
+        >IPTU/Taxa de lixo:
+        <input type="number" id="iptu" name="iptu" oninput="calcularDespesas()"
+      /></label>
+
+      <label for="contador"
+        >Contador:
+        <input
+          type="number"
+          id="contador"
+          name="contador"
+          oninput="calcularDespesas()"
+      /></label>
+
+      <label for="manutencoes"
+        >Manutenções / Limpeza:
+        <input
+          type="number"
+          id="manutencoes"
+          name="manutencoes"
+          oninput="calcularDespesas()"
+      /></label>
+
+      <label for="totalDespesas"
+        >Total de Despesas: <input type="text" id="totalDespesas" disabled
+      /></label>
+
+      <label for="jornadaTrabalhadoGastos"
+        >Jornada de trabalho:
+        <input
+          type="number"
+          id="jornadaTrabalhadoGastos"
+          name="jornadaTrabalhadoGastos"
+          oninput="jornadaTrabalhadoGastosFixos()"
+      /></label>
+
+      <label for="gastoFixoH"
+        >Gasto Fixo (H):
+        <input type="text" id="gastoFixoH" name="gastoFixoH" disabled />
+        <span>*Dividido para os dois técnicos</span>
+      </label>
+
+      <div id="resultado"></div>
+    </form>
+
+    <h1>Despesas Funcionario</h1>
+
+    <form id="despesaForm">
+      <label for="salarioNominal"
+        >Salário Nominal:
+        <input
+          type="number"
+          id="salarioNominal"
+          name="salarioNominal"
+          oninput="calcularDespesasFuncionario()"
+      /></label>
+
+      <label for="ferias"
+        >Férias: <input type="text" id="ferias" name="ferias" disabled
+      /></label>
+
+      <label for="decimoTerceiro"
+        >13º Salário:
+        <input type="text" id="decimoTerceiro" name="decimoTerceiro" disabled
+      /></label>
+
+      <label for="fgts"
+        >FGTS: <input type="text" id="fgts" name="fgts" disabled
+      /></label>
+
+      <label for="multa"
+        >Multa 40%: <input type="text" id="multa" name="multa" disabled
+      /></label>
+
+      <label for="ajudaCusto"
+        >Ajuda de Custo:
+        <input
+          type="number"
+          id="ajudaCusto"
+          name="ajudaCusto"
+          oninput="calcularDespesasFuncionario()"
+      /></label>
+
+      <label for="valeRefeicao"
+        >Vale Refeição:
+        <input
+          type="number"
+          id="valeRefeicao"
+          name="valeRefeicao"
+          oninput="calcularDespesasFuncionario()"
+      /></label>
+
+      <label for="assistenciaMedica"
+        >Assistência Médica:
+        <input
+          type="number"
+          id="assistenciaMedica"
+          name="assistenciaMedica"
+          oninput="calcularDespesasFuncionario()"
+      /></label>
+
+      <label for="totalDespesasFuncionario"
+        >Total de Despesas:
+        <input type="text" id="totalDespesasFuncionario" disabled
+      /></label>
+
+      <label for="jornadaTrabalhado"
+        >Jornada de trabalho:
+        <input
+          type="number"
+          id="jornadaTrabalhado"
+          name="jornadaTrabalhado"
+          oninput="jornadaTrabalhadoFuncionario()"
+      /></label>
+
+      <label for="custoModH"
+        >Custo MOD (H):
+        <input type="text" id="custoModH" name="custoModH" disabled />
+        <span>*Cada técnico</span>
+      </label>
+
+      <div id="resultadoDespesasFuncionario"></div>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
