@@ -108,7 +108,6 @@
       <label for="gastoFixoH"
         >Gasto Fixo (H):
         <input type="text" id="gastoFixoH" name="gastoFixoH" disabled />
-        <span>*Dividido para os dois técnicos</span>
       </label>
 
       <div id="resultado"></div>
@@ -187,7 +186,6 @@
       <label for="custoModH"
         >Custo MOD (H):
         <input type="text" id="custoModH" name="custoModH" disabled />
-        <span>*Cada técnico</span>
       </label>
 
       <div id="resultadoDespesasFuncionario"></div>
@@ -200,6 +198,15 @@
           type="text"
           id="horaTecnicaColaborador"
           name="horaTecnicaColaborador"
+          disabled
+      /></label>
+
+      <label for="quantidadeColaborador"
+        >Quantidade Colaboradores:
+        <input
+          type="text"
+          id="quantidadeColaborador"
+          name="quantidadeColaborador"
           oninput="horaTecnica()"
       /></label>
 
@@ -209,7 +216,7 @@
           type="text"
           id="horaTecnicaEmpresa"
           name="horaTecnicaEmpresa"
-          oninput="horaTecnica()"
+          disabled
       /></label>
     </form>
 

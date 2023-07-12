@@ -17,7 +17,6 @@ function calcularDespesas() {
   var contador = parseFloat(document.getElementById("contador").value);
   var manutencoes = parseFloat(document.getElementById("manutencoes").value);
 
-  // Verificar se os valores são números válidos e, caso contrário, considerá-los como zero
   salario = isNaN(salario) ? 0 : salario;
   encargos = isNaN(encargos) ? 0 : encargos;
   aluguel = isNaN(aluguel) ? 0 : aluguel;
@@ -58,7 +57,6 @@ function calcularDespesasFuncionario() {
     document.getElementById("assistenciaMedica").value
   );
 
-  // Verificar se os valores são números válidos e, caso contrário, considerá-los como zero
   ferias = isNaN(ferias) ? 0 : ferias;
   decimoTerceiro = isNaN(decimoTerceiro) ? 0 : decimoTerceiro;
   fgts = isNaN(fgts) ? 0 : fgts;
@@ -86,13 +84,13 @@ function calcularDespesasFuncionario() {
 }
 
 function jornadaTrabalhadoFuncionario() {
-  var despesasFuncionario = document.getElementById("totalDespesasFuncionario"); // Obter o elemento corretamente
+  var despesasFuncionario = document.getElementById("totalDespesasFuncionario");
 
   var jornadaTrabalhado = parseFloat(
     document.getElementById("jornadaTrabalhado").value
   );
 
-  var totalDespesasFuncionario = parseFloat(despesasFuncionario.value); // Acessar a propriedade 'value' corretamente
+  var totalDespesasFuncionario = parseFloat(despesasFuncionario.value);
 
   var custoModH = totalDespesasFuncionario / jornadaTrabalhado;
 
@@ -102,37 +100,54 @@ function jornadaTrabalhadoFuncionario() {
   document.getElementById("custoModH").value = custoModH.toFixed(2);
 }
 
-
 function jornadaTrabalhadoGastosFixos() {
-  var despesasGastoFixo = document.getElementById("totalDespesas"); // Obter o elemento corretamente
+  var despesasGastoFixo = document.getElementById("totalDespesas");
 
   var jornadaTrabalhadoGastos = parseFloat(
     document.getElementById("jornadaTrabalhadoGastos").value
   );
 
-  var totalDespesasGastoFixo = parseFloat(despesasGastoFixo.value); // Acessar a propriedade 'value' corretamente
+  var totalDespesasGastoFixo = parseFloat(despesasGastoFixo.value);
 
   var gastoFixoH = totalDespesasGastoFixo / jornadaTrabalhadoGastos;
 
-  jornadaTrabalhadoGastos = isNaN(jornadaTrabalhadoGastos) ? 0 : jornadaTrabalhadoGastos;
+  jornadaTrabalhadoGastos = isNaN(jornadaTrabalhadoGastos)
+    ? 0
+    : jornadaTrabalhadoGastos;
   gastoFixoH = isNaN(gastoFixoH) ? 0 : gastoFixoH;
 
   document.getElementById("gastoFixoH").value = gastoFixoH.toFixed(2);
 }
 
 function horaTecnica() {
-  var despesasGastoFixo = document.getElementById("totalDespesas"); // Obter o elemento corretamente
-
-  var jornadaTrabalhadoGastos = parseFloat(
-    document.getElementById("jornadaTrabalhadoGastos").value
+  var horaTecnicaColaborador = document.getElementById("custoModH");
+  var horaTecnicaEmpresa = document.getElementById("gastoFixoH");
+  var quantidadeColaborador = parseFloat(
+    document.getElementById("quantidadeColaborador").value
   );
 
-  var totalDespesasGastoFixo = parseFloat(despesasGastoFixo.value); // Acessar a propriedade 'value' corretamente
+  var calcularHoraTecnicaColaborador = parseFloat(horaTecnicaColaborador.value);
+  var calcularHoraTecnicaEmpresa = parseFloat(horaTecnicaEmpresa.value);
 
-  var gastoFixoH = totalDespesasGastoFixo / jornadaTrabalhadoGastos;
+  var totalHoraTecnicaColaborador =
+    calcularHoraTecnicaColaborador + calcularHoraTecnicaEmpresa / 2;
 
-  jornadaTrabalhadoGastos = isNaN(jornadaTrabalhadoGastos) ? 0 : jornadaTrabalhadoGastos;
-  gastoFixoH = isNaN(gastoFixoH) ? 0 : gastoFixoH;
+  var totalHoraTecnicaEmpresa =
+    calcularHoraTecnicaColaborador * quantidadeColaborador +
+    calcularHoraTecnicaEmpresa;
 
-  document.getElementById("gastoFixoH").value = gastoFixoH.toFixed(2);
+  horaTecnicaColaborador = isNaN(horaTecnicaColaborador)
+    ? 0
+    : horaTecnicaColaborador;
+  horaTecnicaEmpresa = isNaN(horaTecnicaEmpresa) ? 0 : horaTecnicaEmpresa;
+  quantidadeColaborador = isNaN(quantidadeColaborador)
+    ? 0
+    : quantidadeColaborador;
+
+  document.getElementById("horaTecnicaColaborador").value =
+    totalHoraTecnicaColaborador.toFixed(2);
+  document.getElementById("horaTecnicaEmpresa").value =
+    totalHoraTecnicaEmpresa.toFixed(2);
+  document.getElementById("quantidadeColaborador").value =
+    gastoFixoH.toFixed(0);
 }
