@@ -155,6 +155,13 @@ function horaTecnica() {
 
 function calcularPrecoSugerido() {
   var valorHoraTecnica = document.getElementById("horaTecnicaEmpresa");
+  var materialDireto = document.getElementById("materialDireto");
+  var deslocamento = document.getElementById("deslocamento");
+  var alimentacao = document.getElementById("alimentacao");
+  var boleto = document.getElementById("boleto");
+
+  var porcentagemLucro = document.getElementById("porcentagemLucro");
+  var lucro = document.getElementById("lucro");
 
   var quantidadeHoras = parseFloat(
     document.getElementById("quantidadeHoras").value
@@ -169,9 +176,51 @@ function calcularPrecoSugerido() {
   valorTotalHoraTecnica = isNaN(valorTotalHoraTecnica)
     ? 0
     : valorTotalHoraTecnica;
+  materialDireto = isNaN(materialDireto) ? 0 : materialDireto;
+  deslocamento = isNaN(deslocamento) ? 0 : deslocamento;
+  alimentacao = isNaN(alimentacao) ? 0 : alimentacao;
+  boleto = isNaN(boleto) ? 0 : boleto;
+  comissao = isNaN(comissao) ? 0 : comissao;
+  taxaCartao = isNaN(taxaCartao) ? 0 : taxaCartao;
+  imposto = isNaN(imposto) ? 0 : imposto;
+  porcentagemLucro = isNaN(porcentagemLucro) ? 0 : porcentagemLucro;
+  lucro = isNaN(lucro) ? 0 : lucro;
+
+  totalprecoSugerido =
+    (valorTotalHoraTecnica +
+      materialDireto +
+      deslocamento +
+      alimentacao +
+      boleto) /
+    (1 - (0.01 + 0.025 + 0.05 + 0.2));
+
+  var comissao = totalprecoSugerido * 0.01;
+  var taxaCartao = totalprecoSugerido * 0.025;
+  var imposto = totalprecoSugerido * 0.05;
+
+  totalLucro =
+    totalprecoSugerido -
+    valorTotalHoraTecnica -
+    materialDireto -
+    deslocamento -
+    alimentacao -
+    boleto -
+    comissao -
+    taxaCartao -
+    imposto;
+
+  totalPorcentagemLucro = (totalLucro / totalprecoSugerido) * 100;
 
   document.getElementById("valorHoraTecnica").value =
     valorHoraTecnicaValue.toFixed(2);
+  document.getElementById("comissao").value = comissao.toFixed(2);
+  document.getElementById("taxaCartao").value = taxaCartao.toFixed(2);
+  document.getElementById("imposto").value = imposto.toFixed(2);
   document.getElementById("valorTotalHoraTecnica").value =
     valorTotalHoraTecnica.toFixed(2);
+  document.getElementById("precoSugerido").value =
+    totalprecoSugerido.toFixed(2);
+  document.getElementById("lucro").value = totalLucro.toFixed(2);
+  document.getElementById("porcentagemLucro").value =
+    totalPorcentagemLucro + "%";
 }

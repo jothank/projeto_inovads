@@ -219,7 +219,7 @@
           disabled
       /></label>
 
-      <h1>Calcular Preço Sugerido</h1>
+      <h1>Calculo Preço Sugerido</h1>
 
       <label for="valorHoraTecnica"
         >Valor Hora Técnica:
@@ -246,6 +246,77 @@
           id="valorTotalHoraTecnica"
           name="valorTotalHoraTecnica"
           disabled
+      /></label>
+      *********************************
+      <label for="materialDireto"
+        >Material Direto:
+        <input
+          type="text"
+          id="materialDireto"
+          name="materialDireto"
+          oninput="calcularPrecoSugerido()"
+      /></label>
+
+      <label for="deslocamento"
+        >Deslocamento:
+        <input
+          type="text"
+          id="deslocamento"
+          name="deslocamento"
+          oninput="calcularPrecoSugerido()"
+      /></label>
+
+      <label for="alimentacao"
+        >Alimentação:
+        <input
+          type="text"
+          id="alimentacao"
+          name="alimentacao"
+          oninput="calcularPrecoSugerido()"
+      /></label>
+
+      <label for="boleto"
+        >Boleto:
+        <input
+          type="text"
+          id="boleto"
+          name="boleto"
+          oninput="calcularPrecoSugerido()"
+      /></label>
+
+      <label for="comissao"
+        >Comissão: <input type="text" id="comissao" name="comissao" disabled
+      /></label>
+
+      <label for="taxaCartao"
+        >Taxa do Cartão:
+        <input
+          type="text"
+          id="taxaCartao"
+          name="taxaCartao"
+          oninput="calcularPrecoSugerido()"
+      /></label>
+
+      <label for="imposto"
+        >Imposto: <input type="text" id="imposto" name="imposto" disabled
+      /></label>
+
+      <label for="precoSugerido"
+        >Preço Sugerido:
+        <input type="text" id="precoSugerido" name="precoSugerido" disabled
+      /></label>
+
+      <label for="porcentagemLucro"
+        >% Lucro
+        <input
+          type="text"
+          id="porcentagemLucro"
+          name="porcentagemLucro"
+          disabled
+      /></label>
+
+      <label for="lucro"
+        >Lucro <input type="text" id="lucro" name="lucro" disabled
       /></label>
     </form>
 
