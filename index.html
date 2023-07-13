@@ -7,317 +7,139 @@
   <body>
     <h1>Despesas Gastos Fixos</h1>
 
-    <form id="despesaForm">
-      <label for="salario"
-        >Salário Administrativo:
-        <input
-          type="number"
-          step="0.01"
-          name="quantity"
-          min="0.01"
-          id="salario"
-          name="salario"
-          oninput="calcularEncargos(); calcularDespesas()"
-      /></label>
-
-      <label for="encargos"
-        >Encargos / Benefícios:
-        <input type="number" id="encargos" name="encargos" readonly
-      /></label>
-
-      <label for="aluguel"
-        >Aluguel:
-        <input
-          type="number"
-          step="0.01"
-          name="quantity"
-          min="0.01"
-          id="aluguel"
-          name="aluguel"
-          oninput="calcularDespesas()"
-      /></label>
-
-      <label for="agua"
-        >Água:
-        <input type="number" id="agua" name="agua" oninput="calcularDespesas()"
-      /></label>
-
-      <label for="energia"
-        >Energia:
-        <input
-          type="number"
-          id="energia"
-          name="energia"
-          oninput="calcularDespesas()"
-      /></label>
-
-      <label for="telefonia"
-        >Telefonia / Comunicações Adm:
-        <input
-          type="number"
-          id="telefonia"
-          name="telefonia"
-          oninput="calcularDespesas()"
-      /></label>
-
-      <label for="internet"
-        >Internet:
-        <input
-          type="number"
-          id="internet"
-          name="internet"
-          oninput="calcularDespesas()"
-      /></label>
-
-      <label for="iptu"
-        >IPTU/Taxa de lixo:
-        <input type="number" id="iptu" name="iptu" oninput="calcularDespesas()"
-      /></label>
-
-      <label for="contador"
-        >Contador:
-        <input
-          type="number"
-          id="contador"
-          name="contador"
-          oninput="calcularDespesas()"
-      /></label>
-
-      <label for="manutencoes"
-        >Manutenções / Limpeza:
-        <input
-          type="number"
-          id="manutencoes"
-          name="manutencoes"
-          oninput="calcularDespesas()"
-      /></label>
-
-      <label for="totalDespesas"
-        >Total de Despesas: <input type="text" id="totalDespesas" disabled
-      /></label>
-
-      <label for="jornadaTrabalhadoGastos"
-        >Jornada de trabalho:
-        <input
-          type="number"
-          id="jornadaTrabalhadoGastos"
-          name="jornadaTrabalhadoGastos"
-          oninput="jornadaTrabalhadoGastosFixos()"
-      /></label>
-
-      <label for="gastoFixoH"
-        >Gasto Fixo (H):
-        <input type="text" id="gastoFixoH" name="gastoFixoH" disabled />
-      </label>
-
-      <div id="resultado"></div>
+    <form>
+      <label for="salario">Salário:</label>
+      <input type="number" id="salario">
+  
+      <label for="encargos">Encargos:</label>
+      <input type="number" id="encargos" disabled>
+  
+      <label for="aluguel">Aluguel:</label>
+      <input type="number" id="aluguel">
+  
+      <label for="agua">Água:</label>
+      <input type="number" id="agua">
+  
+      <label for="energia">Energia:</label>
+      <input type="number" id="energia">
+  
+      <label for="telefonia">Telefonia:</label>
+      <input type="number" id="telefonia">
+  
+      <label for="internet">Internet:</label>
+      <input type="number" id="internet">
+  
+      <label for="iptu">IPTU:</label>
+      <input type="number" id="iptu">
+  
+      <label for="contador">Contador:</label>
+      <input type="number" id="contador">
+  
+      <label for="manutencoes">Manutenções:</label>
+      <input type="number" id="manutencoes">
+  
+      <label for="salarioNominal">Salário Nominal:</label>
+      <input type="number" id="salarioNominal">
+  
+      <label for="ferias">Férias:</label>
+      <input type="number" id="ferias" disabled>
+  
+      <label for="decimoTerceiro">Décimo Terceiro:</label>
+      <input type="number" id="decimoTerceiro" disabled>
+  
+      <label for="fgts">FGTS:</label>
+      <input type="number" id="fgts" disabled>
+  
+      <label for="multa">Multa:</label>
+      <input type="number" id="multa" disabled>
+  
+      <label for="ajudaCusto">Ajuda de Custo:</label>
+      <input type="number" id="ajudaCusto">
+  
+      <label for="valeRefeicao">Vale Refeição:</label>
+      <input type="number" id="valeRefeicao">
+  
+      <label for="assistenciaMedica">Assistência Médica:</label>
+      <input type="number" id="assistenciaMedica">
+  
+      <label for="totalDespesas">Total de Despesas:</label>
+      <input type="number" id="totalDespesas" disabled>
+  
+      <label for="jornadaTrabalhado">Jornada de Trabalho do Funcionário:</label>
+      <input type="number" id="jornadaTrabalhado">
+  
+      <label for="totalDespesasFuncionario">Total de Despesas do Funcionário:</label>
+      <input type="number" id="totalDespesasFuncionario" disabled>
+  
+      <label for="custoModH">Custo Mod/H:</label>
+      <input type="number" id="custoModH" disabled>
+  
+      <label for="jornadaTrabalhadoGastos">Jornada de Trabalho dos Gastos Fixos:</label>
+      <input type="number" id="jornadaTrabalhadoGastos">
+  
+      <label for="gastoFixoH">Gasto Fixo/H:</label>
+      <input type="number" id="gastoFixoH" disabled>
+  
+      <label for="quantidadeColaborador">Quantidade de Colaboradores:</label>
+      <input type="number" id="quantidadeColaborador">
+  
+      <label for="horaTecnicaColaborador">Hora Técnica do Colaborador:</label>
+      <input type="number" id="horaTecnicaColaborador" disabled>
+  
+      <label for="horaTecnicaEmpresa">Hora Técnica da Empresa:</label>
+      <input type="number" id="horaTecnicaEmpresa" disabled>
+  
+      <label for="quantidadeHoras">Quantidade de Horas:</label>
+      <input type="number" id="quantidadeHoras">
+  
+      <label for="valorHoraTecnica">Valor da Hora Técnica:</label>
+      <input type="number" id="valorHoraTecnica" disabled>
+  
+      <label for="valorTotalHoraTecnica">Valor Total da Hora Técnica:</label>
+      <input type="number" id="valorTotalHoraTecnica" disabled>
+  
+      <label for="materialDireto">Material Direto:</label>
+      <input type="number" id="materialDireto">
+  
+      <label for="deslocamento">Deslocamento:</label>
+      <input type="number" id="deslocamento">
+  
+      <label for="alimentacao">Alimentação:</label>
+      <input type="number" id="alimentacao">
+  
+      <label for="boleto">Boleto:</label>
+      <input type="number" id="boleto">
+  
+      <label for="comissao">Comissão:</label>
+      <input type="number" id="comissao">
+  
+      <label for="taxaCartao">Taxa do Cartão:</label>
+      <input type="number" id="taxaCartao">
+  
+      <label for="imposto">Imposto:</label>
+      <input type="number" id="imposto">
+  
+      <label for="porcentagemLucro">Porcentagem de Lucro:</label>
+      <input type="number" id="porcentagemLucro" disabled>
+  
+      <label for="lucro">Lucro:</label>
+      <input type="number" id="lucro" disabled>
+  
+      <label for="precoSugerido">Preço Sugerido:</label>
+      <input type="number" id="precoSugerido" disabled>
+  
+      <button type="button" onclick="calcularEncargos()">Calcular Encargos</button>
+      <button type="button" onclick="calcularDespesas()">Calcular Despesas</button>
+      <button type="button" onclick="calcularDespesasFuncionario()">Calcular Despesas do Funcionário</button>
+      <button type="button" onclick="jornadaTrabalhadoFuncionario()">Calcular Jornada de Trabalho do Funcionário</button>
+      <button type="button" onclick="jornadaTrabalhadoGastosFixos()">Calcular Jornada de Trabalho dos Gastos Fixos</button>
+      <button type="button" onclick="horaTecnica()">Calcular Hora Técnica</button>
+      <button type="button" onclick="calcularPrecoSugerido()">Calcular Preço Sugerido</button>
     </form>
 
-    <h1>Despesas Funcionario</h1>
+  
 
-    <form id="despesaForm">
-      <label for="salarioNominal"
-        >Salário Nominal:
-        <input
-          type="number"
-          id="salarioNominal"
-          name="salarioNominal"
-          oninput="calcularDespesasFuncionario()"
-      /></label>
 
-      <label for="ferias"
-        >Férias: <input type="text" id="ferias" name="ferias" disabled
-      /></label>
-
-      <label for="decimoTerceiro"
-        >13º Salário:
-        <input type="text" id="decimoTerceiro" name="decimoTerceiro" disabled
-      /></label>
-
-      <label for="fgts"
-        >FGTS: <input type="text" id="fgts" name="fgts" disabled
-      /></label>
-
-      <label for="multa"
-        >Multa 40%: <input type="text" id="multa" name="multa" disabled
-      /></label>
-
-      <label for="ajudaCusto"
-        >Ajuda de Custo:
-        <input
-          type="number"
-          id="ajudaCusto"
-          name="ajudaCusto"
-          oninput="calcularDespesasFuncionario()"
-      /></label>
-
-      <label for="valeRefeicao"
-        >Vale Refeição:
-        <input
-          type="number"
-          id="valeRefeicao"
-          name="valeRefeicao"
-          oninput="calcularDespesasFuncionario()"
-      /></label>
-
-      <label for="assistenciaMedica"
-        >Assistência Médica:
-        <input
-          type="number"
-          id="assistenciaMedica"
-          name="assistenciaMedica"
-          oninput="calcularDespesasFuncionario()"
-      /></label>
-
-      <label for="totalDespesasFuncionario"
-        >Total de Despesas:
-        <input type="text" id="totalDespesasFuncionario" disabled
-      /></label>
-
-      <label for="jornadaTrabalhado"
-        >Jornada de trabalho:
-        <input
-          type="number"
-          id="jornadaTrabalhado"
-          name="jornadaTrabalhado"
-          oninput="jornadaTrabalhadoFuncionario()"
-      /></label>
-
-      <label for="custoModH"
-        >Custo MOD (H):
-        <input type="text" id="custoModH" name="custoModH" disabled />
-      </label>
-
-      <div id="resultadoDespesasFuncionario"></div>
-
-      <h1>Hora Técnica</h1>
-
-      <label for="quantidadeColaborador"
-        >Quantidade Colaboradores:
-        <input
-          type="text"
-          id="quantidadeColaborador"
-          name="quantidadeColaborador"
-          oninput="horaTecnica()"
-      /></label>
-
-      <label for="horaTecnicaColaborador"
-        >Hora Técnica por Colaborador:
-        <input
-          type="text"
-          id="horaTecnicaColaborador"
-          name="horaTecnicaColaborador"
-          disabled
-      /></label>
-
-      <label for="horaTecnicaEmpresa"
-        >Hora Técnica da Empresa:
-        <input
-          type="text"
-          id="horaTecnicaEmpresa"
-          name="horaTecnicaEmpresa"
-          disabled
-      /></label>
-
-      <h1>Calculo Preço Sugerido</h1>
-
-      <label for="valorHoraTecnica"
-        >Valor Hora Técnica:
-        <input
-          type="text"
-          id="valorHoraTecnica"
-          name="valorHoraTecnica"
-          disabled
-      /></label>
-
-      <label for="quantidadeHoras"
-        >Quantidade de Horas:
-        <input
-          type="text"
-          id="quantidadeHoras"
-          name="quantidadeHoras"
-          oninput="calcularPrecoSugerido()"
-      /></label>
-
-      <label for="valorTotalHoraTecnica"
-        >Valor Total Hora Técnica:
-        <input
-          type="text"
-          id="valorTotalHoraTecnica"
-          name="valorTotalHoraTecnica"
-          disabled
-      /></label>
-      <label for="materialDireto"
-        >Material Direto:
-        <input
-          type="text"
-          id="materialDireto"
-          name="materialDireto"
-          oninput="calcularPrecoSugerido()"
-      /></label>
-
-      <label for="deslocamento"
-        >Deslocamento:
-        <input
-          type="text"
-          id="deslocamento"
-          name="deslocamento"
-          oninput="calcularPrecoSugerido()"
-      /></label>
-
-      <label for="alimentacao"
-        >Alimentação:
-        <input
-          type="text"
-          id="alimentacao"
-          name="alimentacao"
-          oninput="calcularPrecoSugerido()"
-      /></label>
-
-      <label for="boleto"
-        >Boleto:
-        <input
-          type="text"
-          id="boleto"
-          name="boleto"
-          oninput="calcularPrecoSugerido()"
-      /></label>
-
-      <label for="comissao"
-        >Comissão: <input type="text" id="comissao" name="comissao" disabled
-      /></label>
-
-      <label for="taxaCartao"
-        >Taxa do Cartão:
-        <input
-          type="text"
-          id="taxaCartao"
-          name="taxaCartao"
-          oninput="calcularPrecoSugerido()"
-      /></label>
-
-      <label for="imposto"
-        >Imposto: <input type="text" id="imposto" name="imposto" disabled
-      /></label>
-
-      <label for="precoSugerido"
-        >Preço Sugerido:
-        <input type="text" id="precoSugerido" name="precoSugerido" disabled
-      /></label>
-
-      <label for="porcentagemLucro"
-        >% Lucro
-        <input
-          type="text"
-          id="porcentagemLucro"
-          name="porcentagemLucro"
-          disabled
-      /></label>
-
-      <label for="lucro"
-        >Lucro <input type="text" id="lucro" name="lucro" disabled
-      /></label>
-    </form>
 
     <script src="script.js"></script>
   </body>
