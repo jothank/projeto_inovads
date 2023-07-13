@@ -1,8 +1,17 @@
+function calcularTudo() {
+  calcularEncargos();
+  calcularDespesas();
+  calcularDespesasFuncionario();
+  jornadaTrabalhadoFuncionario();
+  jornadaTrabalhadoGastosFixos();
+  horaTecnica();
+  calcularPrecoSugerido();
+}
+
 function calcularEncargos() {
   var salario = parseFloat(document.getElementById("salario").value);
   var encargos = salario * 0.5;
   document.getElementById("encargos").value = encargos.toFixed(2);
-  calcularDespesas();
 }
 
 function calcularDespesas() {
@@ -134,7 +143,7 @@ function horaTecnica() {
     calcularHoraTecnicaEmpresa / quantidadeColaborador;
 
   var totalHoraTecnicaEmpresa =
-    calcularHoraTecnicaColaborador * quantidadeColaborador +
+    (calcularHoraTecnicaColaborador * quantidadeColaborador) +
     calcularHoraTecnicaEmpresa;
 
   horaTecnicaColaborador = isNaN(horaTecnicaColaborador)
@@ -170,6 +179,14 @@ function calcularPrecoSugerido() {
   );
 
   var valorHoraTecnicaValue = parseFloat(valorHoraTecnica.value);
+  var materialDireto = parseFloat(materialDireto.value);
+  var deslocamento = parseFloat(deslocamento.value);
+  var alimentacao = parseFloat(alimentacao.value);
+  var boleto = parseFloat(boleto.value);
+  var comissao = parseFloat(comissao.value);
+  var taxaCartao = parseFloat(taxaCartao.value);
+  var imposto = parseFloat(imposto.value);
+  var lucro = parseFloat(lucro.value);
 
   var valorTotalHoraTecnica = valorHoraTecnicaValue * quantidadeHoras;
 
@@ -195,7 +212,14 @@ function calcularPrecoSugerido() {
       alimentacao +
       boleto) /
     (1 - (0.01 + 0.025 + 0.05 + 0.2));
-
+  console.log(
+    valorTotalHoraTecnica,
+    materialDireto,
+    deslocamento,
+    alimentacao,
+    boleto,
+    totalprecoSugerido
+  );
   totalLucro =
     totalprecoSugerido -
     valorTotalHoraTecnica -
@@ -217,6 +241,5 @@ function calcularPrecoSugerido() {
     totalprecoSugerido.toFixed(2);
   document.getElementById("lucro").value = totalLucro.toFixed(2);
   document.getElementById("porcentagemLucro").value =
-    totalPorcentagemLucro + '%';
+    totalPorcentagemLucro + "%";
 }
-

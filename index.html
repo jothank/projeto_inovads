@@ -1,45 +1,46 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
   <head>
     <title>Calculadora</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <h1>Despesas Gastos Fixos</h1>
 
     <form>
       <label for="salario">Salário:</label>
-      <input type="number" id="salario">
+      <input type="number" id="salario" value="2000">
   
       <label for="encargos">Encargos:</label>
       <input type="number" id="encargos" disabled>
   
       <label for="aluguel">Aluguel:</label>
-      <input type="number" id="aluguel">
+      <input type="number" id="aluguel" value="4000">
   
       <label for="agua">Água:</label>
-      <input type="number" id="agua">
+      <input type="number" id="agua" value="200">
   
       <label for="energia">Energia:</label>
-      <input type="number" id="energia">
+      <input type="number" id="energia" value="405.50">
   
       <label for="telefonia">Telefonia:</label>
-      <input type="number" id="telefonia">
+      <input type="number" id="telefonia" value="150">
   
       <label for="internet">Internet:</label>
-      <input type="number" id="internet">
+      <input type="number" id="internet" value="199">
   
       <label for="iptu">IPTU:</label>
-      <input type="number" id="iptu">
+      <input type="number" id="iptu" value="153.78">
   
       <label for="contador">Contador:</label>
-      <input type="number" id="contador">
+      <input type="number" id="contador" value="900">
   
       <label for="manutencoes">Manutenções:</label>
-      <input type="number" id="manutencoes">
+      <input type="number" id="manutencoes" value="75">
   
       <label for="salarioNominal">Salário Nominal:</label>
-      <input type="number" id="salarioNominal">
+      <input type="number" id="salarioNominal" value="2700">
   
       <label for="ferias">Férias:</label>
       <input type="number" id="ferias" disabled>
@@ -54,19 +55,19 @@
       <input type="number" id="multa" disabled>
   
       <label for="ajudaCusto">Ajuda de Custo:</label>
-      <input type="number" id="ajudaCusto">
+      <input type="number" id="ajudaCusto" value="136">
   
       <label for="valeRefeicao">Vale Refeição:</label>
-      <input type="number" id="valeRefeicao">
+      <input type="number" id="valeRefeicao" value="480">
   
       <label for="assistenciaMedica">Assistência Médica:</label>
-      <input type="number" id="assistenciaMedica">
+      <input type="number" id="assistenciaMedica" value="122">
   
       <label for="totalDespesas">Total de Despesas:</label>
       <input type="number" id="totalDespesas" disabled>
   
       <label for="jornadaTrabalhado">Jornada de Trabalho do Funcionário:</label>
-      <input type="number" id="jornadaTrabalhado">
+      <input type="number" id="jornadaTrabalhado" value="220">
   
       <label for="totalDespesasFuncionario">Total de Despesas do Funcionário:</label>
       <input type="number" id="totalDespesasFuncionario" disabled>
@@ -75,13 +76,13 @@
       <input type="number" id="custoModH" disabled>
   
       <label for="jornadaTrabalhadoGastos">Jornada de Trabalho dos Gastos Fixos:</label>
-      <input type="number" id="jornadaTrabalhadoGastos">
+      <input type="number" id="jornadaTrabalhadoGastos" value="220">
   
       <label for="gastoFixoH">Gasto Fixo/H:</label>
       <input type="number" id="gastoFixoH" disabled>
   
       <label for="quantidadeColaborador">Quantidade de Colaboradores:</label>
-      <input type="number" id="quantidadeColaborador">
+      <input type="number" id="quantidadeColaborador" value="2">
   
       <label for="horaTecnicaColaborador">Hora Técnica do Colaborador:</label>
       <input type="number" id="horaTecnicaColaborador" disabled>
@@ -90,7 +91,7 @@
       <input type="number" id="horaTecnicaEmpresa" disabled>
   
       <label for="quantidadeHoras">Quantidade de Horas:</label>
-      <input type="number" id="quantidadeHoras">
+      <input type="number" id="quantidadeHoras" value="220">
   
       <label for="valorHoraTecnica">Valor da Hora Técnica:</label>
       <input type="number" id="valorHoraTecnica" disabled>
@@ -99,13 +100,13 @@
       <input type="number" id="valorTotalHoraTecnica" disabled>
   
       <label for="materialDireto">Material Direto:</label>
-      <input type="number" id="materialDireto">
+      <input type="number" id="materialDireto" value="200">
   
-      <label for="deslocamento">Deslocamento:</label>
-      <input type="number" id="deslocamento">
+      <label for="deslocamento">Deslocamento KM:</label>
+      <input type="number" id="deslocamento" value="120">
   
       <label for="alimentacao">Alimentação:</label>
-      <input type="number" id="alimentacao">
+      <input type="number" id="alimentacao" value="50">
   
       <label for="boleto">Boleto:</label>
       <input type="number" id="boleto">
@@ -128,20 +129,9 @@
       <label for="precoSugerido">Preço Sugerido:</label>
       <input type="number" id="precoSugerido" disabled>
   
-      <button type="button" onclick="calcularEncargos()">Calcular Encargos</button>
-      <button type="button" onclick="calcularDespesas()">Calcular Despesas</button>
-      <button type="button" onclick="calcularDespesasFuncionario()">Calcular Despesas do Funcionário</button>
-      <button type="button" onclick="jornadaTrabalhadoFuncionario()">Calcular Jornada de Trabalho do Funcionário</button>
-      <button type="button" onclick="jornadaTrabalhadoGastosFixos()">Calcular Jornada de Trabalho dos Gastos Fixos</button>
-      <button type="button" onclick="horaTecnica()">Calcular Hora Técnica</button>
-      <button type="button" onclick="calcularPrecoSugerido()">Calcular Preço Sugerido</button>
+      <button type="button" onclick="calcularTudo()">Calcular Tudo</button>
     </form>
-
-  
-
-
-
-    <script src="script.js"></script>
   </body>
 </html>
+
 
