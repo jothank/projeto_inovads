@@ -1,137 +1,174 @@
 <<!DOCTYPE html>
-<html>
+  <html>
+
   <head>
     <title>Calculadora</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js"></script>
   </head>
+
   <body>
     <h1>Despesas Gastos Fixos</h1>
 
     <form>
+
+      <h2>Gastos Fixos</h2>
+
       <label for="salario">Salário:</label>
       <input type="number" id="salario" value="2000">
-  
+
       <label for="encargos">Encargos:</label>
       <input type="number" id="encargos" disabled>
-  
+
       <label for="aluguel">Aluguel:</label>
       <input type="number" id="aluguel" value="4000">
-  
+
       <label for="agua">Água:</label>
       <input type="number" id="agua" value="200">
-  
+
       <label for="energia">Energia:</label>
       <input type="number" id="energia" value="405.50">
-  
+
       <label for="telefonia">Telefonia:</label>
       <input type="number" id="telefonia" value="150">
-  
+
       <label for="internet">Internet:</label>
       <input type="number" id="internet" value="199">
-  
+
       <label for="iptu">IPTU:</label>
       <input type="number" id="iptu" value="153.78">
-  
+
       <label for="contador">Contador:</label>
       <input type="number" id="contador" value="900">
-  
+
       <label for="manutencoes">Manutenções:</label>
       <input type="number" id="manutencoes" value="75">
-  
+
+      <h2>Gasto Colaborador</h2>
+
       <label for="salarioNominal">Salário Nominal:</label>
       <input type="number" id="salarioNominal" value="2700">
-  
+
       <label for="ferias">Férias:</label>
       <input type="number" id="ferias" disabled>
-  
+
       <label for="decimoTerceiro">Décimo Terceiro:</label>
       <input type="number" id="decimoTerceiro" disabled>
-  
+
       <label for="fgts">FGTS:</label>
       <input type="number" id="fgts" disabled>
-  
+
       <label for="multa">Multa:</label>
       <input type="number" id="multa" disabled>
-  
+
       <label for="ajudaCusto">Ajuda de Custo:</label>
       <input type="number" id="ajudaCusto" value="136">
-  
+
+      <h2>Dados Mão de Obra</h2>
+
       <label for="valeRefeicao">Vale Refeição:</label>
       <input type="number" id="valeRefeicao" value="480">
-  
+
       <label for="assistenciaMedica">Assistência Médica:</label>
       <input type="number" id="assistenciaMedica" value="122">
-  
+
       <label for="totalDespesas">Total de Despesas:</label>
       <input type="number" id="totalDespesas" disabled>
-  
+
+      <h2>Custo Hora Colaborador</h2>
+
       <label for="jornadaTrabalhado">Jornada de Trabalho do Funcionário:</label>
       <input type="number" id="jornadaTrabalhado" value="220">
-  
+
       <label for="totalDespesasFuncionario">Total de Despesas do Funcionário:</label>
       <input type="number" id="totalDespesasFuncionario" disabled>
-  
+
       <label for="custoModH">Custo Mod/H:</label>
       <input type="number" id="custoModH" disabled>
-  
+
+      <h2>Custo Fixo Empresa</h2>
+
       <label for="jornadaTrabalhadoGastos">Jornada de Trabalho dos Gastos Fixos:</label>
       <input type="number" id="jornadaTrabalhadoGastos" value="220">
-  
+
       <label for="gastoFixoH">Gasto Fixo/H:</label>
       <input type="number" id="gastoFixoH" disabled>
-  
+
+      <h2>Quantidade Colaboradores</h2>
+
       <label for="quantidadeColaborador">Quantidade de Colaboradores:</label>
       <input type="number" id="quantidadeColaborador" value="2">
-  
+
       <label for="horaTecnicaColaborador">Hora Técnica do Colaborador:</label>
       <input type="number" id="horaTecnicaColaborador" disabled>
-  
+
+      <h2>Calculo Final</h2>
+
       <label for="horaTecnicaEmpresa">Hora Técnica da Empresa:</label>
       <input type="number" id="horaTecnicaEmpresa" disabled>
-  
+
       <label for="quantidadeHoras">Quantidade de Horas:</label>
       <input type="number" id="quantidadeHoras" value="220">
-  
+
       <label for="valorHoraTecnica">Valor da Hora Técnica:</label>
       <input type="number" id="valorHoraTecnica" disabled>
-  
+
       <label for="valorTotalHoraTecnica">Valor Total da Hora Técnica:</label>
       <input type="number" id="valorTotalHoraTecnica" disabled>
-  
+
       <label for="materialDireto">Material Direto:</label>
       <input type="number" id="materialDireto" value="200">
-  
+
       <label for="deslocamento">Deslocamento KM:</label>
       <input type="number" id="deslocamento" value="120">
-  
+
       <label for="alimentacao">Alimentação:</label>
       <input type="number" id="alimentacao" value="50">
-  
+
       <label for="boleto">Boleto:</label>
       <input type="number" id="boleto">
-  
+
       <label for="comissao">Comissão:</label>
-      <input type="number" id="comissao">
-  
+      <input type="number" id="comissao" disabled>
+
       <label for="taxaCartao">Taxa do Cartão:</label>
-      <input type="number" id="taxaCartao">
-  
+      <input type="number" id="taxaCartao" disabled>
+
       <label for="imposto">Imposto:</label>
-      <input type="number" id="imposto">
-  
+      <input type="number" id="imposto" disabled>
+
       <label for="porcentagemLucro">Porcentagem de Lucro:</label>
-      <input type="number" id="porcentagemLucro" disabled>
-  
+      <input type="text" id="porcentagemLucro" disabled>
+
       <label for="lucro">Lucro:</label>
       <input type="number" id="lucro" disabled>
-  
+
       <label for="precoSugerido">Preço Sugerido:</label>
       <input type="number" id="precoSugerido" disabled>
-  
+
       <button type="button" onclick="calcularTudo()">Calcular Tudo</button>
     </form>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>DRE Resultado</h2>
+        <p style="display: flex; justify-content: space-between;">Receita de Vendas: <span id="precoSugeridoResult"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Hora Técnica: <span id="precoHoraTecnica"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Material Direto: <span id="precoMaterialDireto"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Deslocamento: <span id="precoDeslocamento"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Alimentação: <span id="precoAlimentacao"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Boleto: <span id="precoBoleto"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Comissão: <span id="precoComissao"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Taxa do Cartão: <span id="precoTaxaCartao"></span></p>
+        <p style="display: flex; justify-content: space-between;">(-) Imposto: <span id="precoImposto"></span></p>
+        <p style="display: flex; justify-content: space-between;">(=) Lucro %: <span id="precoLucroPorcentagem"></span></p>
+        <p style="display: flex; justify-content: space-between;">(=) Lucro: <span id="precoLucro"></span></p>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
   </body>
-</html>
 
-
+  </html>

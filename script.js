@@ -6,6 +6,7 @@ function calcularTudo() {
   jornadaTrabalhadoGastosFixos();
   horaTecnica();
   calcularPrecoSugerido();
+  showModal();
 }
 
 function calcularEncargos() {
@@ -143,7 +144,7 @@ function horaTecnica() {
     calcularHoraTecnicaEmpresa / quantidadeColaborador;
 
   var totalHoraTecnicaEmpresa =
-    (calcularHoraTecnicaColaborador * quantidadeColaborador) +
+    calcularHoraTecnicaColaborador * quantidadeColaborador +
     calcularHoraTecnicaEmpresa;
 
   horaTecnicaColaborador = isNaN(horaTecnicaColaborador)
@@ -187,6 +188,7 @@ function calcularPrecoSugerido() {
   var taxaCartao = parseFloat(taxaCartao.value);
   var imposto = parseFloat(imposto.value);
   var lucro = parseFloat(lucro.value);
+  var porcentagemLucro = parseFloat(porcentagemLucro.value);
 
   var valorTotalHoraTecnica = valorHoraTecnicaValue * quantidadeHoras;
 
@@ -212,14 +214,11 @@ function calcularPrecoSugerido() {
       alimentacao +
       boleto) /
     (1 - (0.01 + 0.025 + 0.05 + 0.2));
-  console.log(
-    valorTotalHoraTecnica,
-    materialDireto,
-    deslocamento,
-    alimentacao,
-    boleto,
-    totalprecoSugerido
-  );
+
+  totalComissao = totalprecoSugerido * 0.01;
+  totalTaxaCartao = totalprecoSugerido * 0.025;
+  totalImposto = totalprecoSugerido * 0.05;
+
   totalLucro =
     totalprecoSugerido -
     valorTotalHoraTecnica -
@@ -227,12 +226,15 @@ function calcularPrecoSugerido() {
     deslocamento -
     alimentacao -
     boleto -
-    comissao -
-    taxaCartao -
-    imposto;
+    totalComissao -
+    totalTaxaCartao -
+    totalImposto;
 
-  totalPorcentagemLucro = totalLucro / totalprecoSugerido;
+  totalPorcentagemLucro = (totalLucro / totalprecoSugerido) * 100;
 
+  document.getElementById("comissao").value = totalComissao.toFixed(2);
+  document.getElementById("taxaCartao").value = totalTaxaCartao.toFixed(2);
+  document.getElementById("imposto").value = totalImposto.toFixed(2);
   document.getElementById("valorHoraTecnica").value =
     valorHoraTecnicaValue.toFixed(2);
   document.getElementById("valorTotalHoraTecnica").value =
@@ -242,4 +244,77 @@ function calcularPrecoSugerido() {
   document.getElementById("lucro").value = totalLucro.toFixed(2);
   document.getElementById("porcentagemLucro").value =
     totalPorcentagemLucro + "%";
+
+  // Definir o valor do preço sugerido
+  var precoSugerido = document.getElementById("precoSugerido").value;
+  precoSugerido = precoSugerido ? parseFloat(precoSugerido) : 0;
+  document.getElementById("precoSugeridoResult").textContent =
+    "R$" + precoSugerido.toFixed(2);
+
+  var precoHoraTecnica = document.getElementById("valorTotalHoraTecnica").value;
+  precoHoraTecnica = precoHoraTecnica ? parseFloat(precoHoraTecnica) : 0;
+  document.getElementById("precoHoraTecnica").textContent =
+    "R$" + precoHoraTecnica.toFixed(2);
+
+  var materialDireto = document.getElementById("materialDireto").value;
+  materialDireto = materialDireto ? parseFloat(materialDireto) : 0;
+  document.getElementById("precoMaterialDireto").textContent =
+    "R$" + materialDireto.toFixed(2);
+
+  var deslocamento = document.getElementById("deslocamento").value;
+  deslocamento = deslocamento ? parseFloat(deslocamento) : 0;
+  document.getElementById("precoDeslocamento").textContent =
+    "R$" + deslocamento.toFixed(2);
+
+  var alimentacao = document.getElementById("alimentacao").value;
+  alimentacao = alimentacao ? parseFloat(alimentacao) : 0;
+  document.getElementById("precoAlimentacao").textContent =
+    "R$" + alimentacao.toFixed(2);
+
+  var boleto = document.getElementById("boleto").value;
+  boleto = boleto ? parseFloat(boleto) : 0;
+  document.getElementById("precoBoleto").textContent = "R$" + boleto.toFixed(2);
+
+  var comissao = document.getElementById("comissao").value;
+  comissao = comissao ? parseFloat(comissao) : 0;
+  document.getElementById("precoComissao").textContent =
+    "R$" + comissao.toFixed(2);
+
+  var taxaCartao = document.getElementById("taxaCartao").value;
+  taxaCartao = taxaCartao ? parseFloat(taxaCartao) : 0;
+  document.getElementById("precoTaxaCartao").textContent =
+    "R$" + taxaCartao.toFixed(2);
+
+  var imposto = document.getElementById("imposto").value;
+  imposto = imposto ? parseFloat(imposto) : 0;
+  document.getElementById("precoImposto").textContent =
+    "R$" + imposto.toFixed(2);
+
+  var porcentagemLucro = document.getElementById("porcentagemLucro").value;
+  document.getElementById("precoLucroPorcentagem").textContent =
+    porcentagemLucro;
+
+  var lucro = document.getElementById("lucro").value;
+  lucro = lucro ? parseFloat(lucro) : 0;
+  document.getElementById("precoLucro").textContent = "R$" + lucro.toFixed(2);
+}
+
+function showModal() {
+  var modal = document.getElementById("myModal");
+  var span = document.getElementsByClassName("close")[0];
+
+  // Exibir o modal
+  modal.style.display = "block";
+
+  // Fechar o modal ao clicar no 'x'
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Fechar o modal ao clicar fora dele
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 }
