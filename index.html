@@ -167,18 +167,21 @@
 
             <label for="precoSugerido">Preço Sugerido:</label>
             <input type="number" id="precoSugerido" disabled />
+            
           </div>
-          <button type="button" onclick="calcularTudo()">Calcular Tudo</button>
+          <div>
+            <button type="button" class="calcular" onclick="calcularTudo()">
+              Calcular Tudo
+            </button>
+          </div>
+          
         </div>
       </div>
-
-
     </form>
 
     <!-- Modal -->
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
         <h2>DRE Resultado</h2>
         <p style="display: flex; justify-content: space-between">
           Receita de Vendas: <span id="precoSugeridoResult"></span>
@@ -213,6 +216,7 @@
         <p style="display: flex; justify-content: space-between">
           (=) Lucro: <span id="precoLucro"></span>
         </p>
+        <button type="button" class="close">Fechar</button>
       </div>
     </div>
 
