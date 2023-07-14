@@ -230,7 +230,7 @@ function calcularPrecoSugerido() {
     totalTaxaCartao -
     totalImposto;
 
-  totalPorcentagemLucro = totalLucro / totalprecoSugerido;
+  totalPorcentagemLucro = (totalLucro / totalprecoSugerido) * 100;
 
   document.getElementById("comissao").value = totalComissao.toFixed(2);
   document.getElementById("taxaCartao").value = totalTaxaCartao.toFixed(2);
@@ -242,8 +242,8 @@ function calcularPrecoSugerido() {
   document.getElementById("precoSugerido").value =
     totalprecoSugerido.toFixed(2);
   document.getElementById("lucro").value = totalLucro.toFixed(2);
-  document.getElementById("porcentagemLucro").value = totalPorcentagemLucro + '%';
-
+  document.getElementById("porcentagemLucro").value =
+    totalPorcentagemLucro + "%";
 
   // Definir o valor do preço sugerido
   var precoSugerido = document.getElementById("precoSugerido").value;
@@ -318,4 +318,3 @@ function showModal() {
     }
   };
 }
-
